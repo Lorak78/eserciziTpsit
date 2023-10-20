@@ -9,25 +9,25 @@ es. 1
 testo:
 */
 
-#define DIM 10
+#define DIM 5
 
 void caricaVet(int vet[], int n){
-    for(int k = 0; k < n; k++){
-        printf("inserisci elemento %d: ", k);
-        scanf("%d", vet + k);
+    for(int *p = vet; p < vet+n; p++){
+        printf("inserisci elemento %d: ", *p);
+        scanf("%d", p);
     }
 }
 
 int calcolaSomma(int vet[], int n){
     int s = 0;
-    for(int k = 0; k < n; k++){
-        s += *(vet + k);
+    for(int *p = vet; p < vet+n; p++){
+        s += *p;
     }
     return s;
 }
 
 int main(){
-    int vet[DIM];
+    int vet[DIM] = {1, 2, 3, 4, 5};
     caricaVet(vet, DIM);
     int somma = calcolaSomma(vet, DIM);
     printf("somma: %d", somma);
