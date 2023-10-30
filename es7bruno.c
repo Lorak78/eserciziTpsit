@@ -121,7 +121,7 @@ int main(){
     int anno;
     int nRighe = leggiFile(archivio, "archivio.csv", MAX_RIGHE, LUNG_RIGA);
     int scel;
-    while(scel < 0 || scel > 4){
+    do{
         scel = menu();
         switch(scel){
             case 1:
@@ -140,7 +140,7 @@ int main(){
             stampaArchivio(archivio, nRighe);
             break;
         }
-    }
+    }while(scel > 0 && scel <= 4);
     free(archivio);
 
     return 0;

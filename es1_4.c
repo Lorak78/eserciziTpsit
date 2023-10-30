@@ -96,7 +96,7 @@ int main(){
     printf("numero, titolo, genere, anno, disponibilita'\n");
     for(p = array_film; p < array_film+nRighe; p++){
             printf("%d, %s, %s, %d, %s\n", p->numero, 
-                                            p->titolo, 
+                                            p->titolo,
                                             p->genere, 
                                             p->anno, 
                                             p->disponibilita);
