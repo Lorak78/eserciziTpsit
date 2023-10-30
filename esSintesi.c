@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+/*
+-Creare un file .csv con COGNOME, NOME, NASCITA (annomesegiorno in formato INT)
+-scorrere il file con la funzione FGETS e STRTOK
+-stampare in ordine DECRESCENTE (dal più grande al più piccolo)
+ utilizzando i puntatori e allocazione dinamica (MALLOC)
+*/
 
 #define DIM_RIGA 200
 #define MAX_RIGHE 10000
@@ -48,11 +54,10 @@ void bubbleSort(Persona vett[], int n) {
     sup= n-1 ;
     while ( sup>0 ) {
         sca=0 ;
-        for (Persona *p = vett; p < vett+n; p++) {
-            if (p->nascita > p->nascita) {
+        for (Persona *p = vett; p < vett+n - 1; p++) {
+            if (p->nascita < (p + 1)->nascita) {
                 swapPersona(p, p + 1);
                 sca = p->nascita;
-                printf("\n ciao");
             }
         }
         sup=sca ;
@@ -72,8 +77,8 @@ int main(){
     int nRighe = leggiFile(pers, "file.csv", MAX_RIGHE, DIM_RIGA);
     stampaTabPers(pers, nRighe);
     bubbleSort(pers, nRighe);
-    printf("ciao");
     stampaTabPers(pers, nRighe);
+    free(pers);
 
     return 0;
 }
