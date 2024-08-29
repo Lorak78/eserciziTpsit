@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "es1_4.C": "cpp"
+        "es1_4.C": "cpp",
+        "stdlib.h": "c"
     }
 }
